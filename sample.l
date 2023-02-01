@@ -1,0 +1,21 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+	char character;
+	char word;
+
+%}
+
+character [a-zA-Z]
+word [a-zA-Z]+
+
+%%
+{character} {printf("%s:IT IS A CHARACTER \n",yytext); }
+{word} {printf("%s:IT IS A WORD \n",yytext); }
+
+%%
+int main()
+{
+	yylex();
+	return 0;
+}

@@ -1,0 +1,6 @@
+hello, 
+this is a text file.
+and it will be pass as an argument
+in a lex file to count 
+its number of lines 
+and number of characters.

@@ -1,0 +1,4 @@
+hello, 
+this is a text file. 
+it is for using as an input file 
+in the program.

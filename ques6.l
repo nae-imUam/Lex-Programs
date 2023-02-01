@@ -1,0 +1,23 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+	#include<string.h>
+	int word=0,character=0,space=0,lines=1;
+%}
+%%
+[A-Za-z|0-9]+ {word++;character=character+strlen(yytext);}
+. {character++;}
+\n {lines++;character++;}
+([ ])|[ \n\t\r]+ {space++;}
+%%
+int main()
+{
+	yyin=fopen("sample.cpp","r");
+		yylex();
+		printf("Resut of sample.cpp file: \n");
+		printf("word : %d\n",word);
+		printf("characters : %d\n",character);
+		printf("lines : %d\n",lines);
+		printf("spaces : %d\n",space);		
+	return 0;
+}
